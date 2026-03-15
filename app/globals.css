@@ -14,3 +14,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* LED Ticker: soldan sağa yavaş kayma */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-wrap {
+  width: 100%;
+}
+
+.ticker-inner {
+  animation: ticker-scroll 35s linear infinite;
+}
+

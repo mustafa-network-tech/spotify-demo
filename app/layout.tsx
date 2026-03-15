@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Spotify Demo Site",
-  description: "Modern Spotify tanıtım sitesi demosu",
+  title: "Mavi Sarkılar",
+  description: "Mavi Sarkılar · Modern müzik sanatçısı vitrin sitesi",
 };
 
 export default function RootLayout({
