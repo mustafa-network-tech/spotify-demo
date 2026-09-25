@@ -1,6 +1,8 @@
 // Hero'da canlı izlenecek YouTube video ID'si (örn: youtube.com/watch?v=XXXXX → XXXXX)
 const HERO_YOUTUBE_VIDEO_ID = "g2IyQiO_Ty8";
 
+import { MK_HOME, MK_WHATSAPP } from "./demo";
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#0b0b0f] text-white">
@@ -63,7 +65,7 @@ export default function HomePage() {
               <div className="mb-2 flex items-center justify-between gap-2 px-1">
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
-                    Canlı izle
+                    Örnek video
                   </p>
                   <h2 className="text-base font-semibold md:text-lg">Mavi Sarkılar</h2>
                 </div>
@@ -77,7 +79,7 @@ export default function HomePage() {
                   <iframe
                     className="absolute inset-0 h-full w-full"
                     src={`https://www.youtube.com/embed/${HERO_YOUTUBE_VIDEO_ID}?autoplay=0`}
-                    title="Mavi Sarkılar - Canlı"
+                    title="Örnek YouTube videosu"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -487,6 +489,9 @@ export default function HomePage() {
               Şehrin gece ışıkları, boş sokaklar ve loş stüdyo sahneleriyle
               kurgulanan bu klip, şarkının hissini görsel olarak da destekler.
             </p>
+            <p className="mt-3 text-xs text-zinc-500">
+              Örnek embed alanıdır; gösterilen video Mavi Sarkılar&apos;a ait değildir. Gerçek projede sanatçının kendi klibi yer alır.
+            </p>
           </div>
 
           <div className="overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-xl shadow-black/50">
@@ -494,7 +499,7 @@ export default function HomePage() {
               <iframe
                 className="absolute inset-0 h-full w-full"
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Mavi Sarkılar - Gecenin İçinde Mavi (Official Video)"
+                title="Örnek YouTube videosu"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -616,7 +621,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                <p className="text-xs text-zinc-400">Spotify Editorial Playlist</p>
+                <p className="text-xs text-zinc-400">Spotify Editorial Playlist · Örnek</p>
                 <p className="mt-1 text-sm font-medium">
                   &quot;Fresh Finds Türkiye&quot; listesinde öne çıkan sanatçı
                   olarak yer alma potansiyeli.
@@ -662,12 +667,14 @@ export default function HomePage() {
                   <span className="text-zinc-400">Marka:</span> MK Digital Systems
                 </p>
                 <p>
-                  <span className="text-zinc-400">E-posta:</span>{" "}
+                  <span className="text-zinc-400">İletişim:</span>{" "}
                   <a
-                    href="mailto:mustafa@mavikadraj.com.tr"
+                    href={MK_WHATSAPP}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-blue-300 underline-offset-2 hover:underline"
                   >
-                    mustafa@mavikadraj.com.tr
+                    WhatsApp’tan MK Digital Systems ile görüşün
                   </a>
                 </p>
                 <p>
@@ -728,7 +735,7 @@ export default function HomePage() {
                 <span className="font-medium text-zinc-200">Mavi Sarkılar</span>
                 <span className="text-zinc-600">·</span>
                 <span className="text-zinc-400">
-                  Spotify artist landing page demosu
+                  Spotify artist landing page demosu · Gerçek bir sanatçı değildir
                 </span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-2 text-[11px]">
@@ -736,9 +743,12 @@ export default function HomePage() {
                 <span className="rounded-full bg-white/10 px-3 py-1 font-semibold text-zinc-100">
                   Mustafa Öner
                 </span>
-                <span className="rounded-full bg-white/10 px-3 py-1 font-semibold text-zinc-100">
+                <a
+                  href={MK_HOME}
+                  className="rounded-full bg-white/10 px-3 py-1 font-semibold text-zinc-100 transition hover:bg-blue-500/30"
+                >
                   MK Digital Systems
-                </span>
+                </a>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <a

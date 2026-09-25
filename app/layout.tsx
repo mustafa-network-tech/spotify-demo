@@ -1,66 +1,52 @@
 import "./globals.css";
+import { DemoBar } from "./DemoBar";
+import { MK_HOME } from "./demo";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mavisarkilar.com";
+// Absolute URLs (og:image) resolve against the actual deployment, not a domain MK does not own.
+const siteUrl = "https://spotify-demo-hazel.vercel.app";
+const title = "Mavi Sarkılar — Sanatçı Web Sitesi Demosu | MK Digital Systems";
+const description =
+  "MK Digital Systems'in müzisyenler için hazırladığı örnek web sitesi: Spotify vitrini, müzik videoları, konser takvimi ve bülten alanı. Mavi Sarkılar gerçek bir sanatçı değildir.";
 
+// Demo site: kept out of search results so it is never mistaken for a real artist (X-Robots-Tag in next.config.mjs too).
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Mavi Sarkılar | Müzik Sanatçısı & Spotify Vitrin",
-    template: "%s | Mavi Sarkılar",
+    default: title,
+    template: "%s | Mavi Sarkılar (Demo)",
   },
-  description:
-    "Mavi Sarkılar resmi sitesi. Mustafa Öner · MK Digital Systems. Yeni şarkılar, Spotify listeleri, konser tarihleri ve müzik videoları. Modern pop, akustik ve lofi.",
-  keywords: [
-    "Mavi Sarkılar",
-    "Mustafa Öner",
-    "MK Digital Systems",
-    "müzik",
-    "sanatçı",
-    "Spotify",
-    "Türkiye",
-    "pop",
-    "akustik",
-    "lofi",
-    "konser",
-    "single",
-  ],
-  authors: [{ name: "Mustafa Öner", url: "https://mavikadraj.com.tr" }],
-  creator: "Mustafa Öner · MK Digital Systems",
+  description,
+  authors: [{ name: "MK Digital Systems", url: MK_HOME }],
+  creator: "MK Digital Systems",
   publisher: "MK Digital Systems",
-  applicationName: "Mavi Sarkılar",
+  applicationName: "Mavi Sarkılar (Demo)",
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
     },
   },
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: siteUrl,
-    siteName: "Mavi Sarkılar",
-    title: "Mavi Sarkılar | Mustafa Öner · MK Digital Systems",
-    description:
-      "Mavi Sarkılar resmi sitesi. Mustafa Öner · MK Digital Systems. Yeni şarkılar, Spotify listeleri, konser tarihleri ve müzik videoları.",
+    siteName: "Mavi Sarkılar (Demo)",
+    title: "Mavi Sarkılar · Sanatçı web sitesi demosu",
+    description: "Müzisyenler için hazırlanmış örnek web sitesi. MK Digital Systems portföy projesi.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Mavi Sarkılar",
+        alt: "Mavi Sarkılar — sanatçı web sitesi demosu",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mavi Sarkılar | Mustafa Öner · MK Digital Systems",
-    description:
-      "Mavi Sarkılar resmi sitesi. Mustafa Öner · MK Digital Systems. Yeni şarkılar, Spotify listeleri, konser tarihleri.",
-  },
-  alternates: {
-    canonical: siteUrl,
+    title: "Mavi Sarkılar · Sanatçı web sitesi demosu",
+    description: "Müzisyenler için hazırlanmış örnek web sitesi. MK Digital Systems portföy projesi.",
   },
 };
 
@@ -71,7 +57,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body>{children}</body>
+      <body>
+        <DemoBar />
+        {children}
+      </body>
     </html>
   );
 }
